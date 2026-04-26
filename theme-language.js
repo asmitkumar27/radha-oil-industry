@@ -29,13 +29,16 @@ class ThemeLanguageManager {
 
     updateThemeIcon() {
         const themeIcon = document.getElementById('themeIcon');
-        if (themeIcon) {
+        const themeBtn = document.getElementById('themeToggle');
+        if (themeIcon && themeBtn) {
             if (this.currentTheme === 'dark') {
                 themeIcon.className = 'fas fa-sun';
                 themeIcon.style.color = '#FFD700';
+                themeBtn.classList.add('light-mode');
             } else {
                 themeIcon.className = 'fas fa-moon';
-                themeIcon.style.color = '#667eea';
+                themeIcon.style.color = '#ffffff';
+                themeBtn.classList.remove('light-mode');
             }
         }
     }
@@ -181,6 +184,16 @@ class ThemeLanguageManager {
         
         this.currentLanguage = lang;
         localStorage.setItem('language', lang);
+        
+        // Update language switcher animation
+        const languageSwitcher = document.querySelector('.language-switcher');
+        if (languageSwitcher) {
+            if (lang === 'en') {
+                languageSwitcher.classList.add('english');
+            } else {
+                languageSwitcher.classList.remove('english');
+            }
+        }
         
         // Update language buttons
         document.querySelectorAll('.lang-btn').forEach(btn => {

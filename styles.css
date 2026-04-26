@@ -1965,49 +1965,86 @@ body {
         text-align: center;
     }
 }
-/* Theme & Language Controls - FORCE VISIBLE */
+/* Theme & Language Controls - BEAUTIFUL DESIGN */
 .nav-controls {
     display: flex !important;
     align-items: center !important;
-    gap: 15px !important;
+    gap: 12px !important;
     margin-left: auto !important;
     order: 2 !important;
-    background: rgba(255, 0, 0, 0.8) !important; /* Bright red background for debugging */
-    padding: 15px !important;
-    border-radius: 8px !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.9)) !important;
+    padding: 8px 12px !important;
+    border-radius: 50px !important;
+    backdrop-filter: blur(15px) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(255, 215, 0, 0.3) !important;
     position: relative !important;
-    z-index: 9999 !important;
-    min-width: 200px !important;
-    height: 60px !important;
+    z-index: 1000 !important;
 }
 
-/* Language Switcher - FORCE VISIBLE */
+/* Language Switcher - BEAUTIFUL TOGGLE */
 .language-switcher {
     display: flex !important;
-    background: rgba(255, 255, 255, 0.9) !important;
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
     border-radius: 25px !important;
-    padding: 8px !important;
-    backdrop-filter: blur(10px) !important;
-    border: 3px solid #FFD700 !important; /* Gold border for visibility */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
-    min-width: 100px !important;
-    height: 40px !important;
+    padding: 3px !important;
+    position: relative !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+    overflow: hidden !important;
+}
+
+.language-switcher::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: calc(50% - 3px);
+    height: calc(100% - 6px);
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    border-radius: 20px;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 1;
+}
+
+.language-switcher.english::before {
+    transform: translateX(100%);
 }
 
 .lang-btn {
     display: flex !important;
     align-items: center !important;
-    gap: 5px !important;
+    justify-content: center !important;
+    gap: 4px !important;
     padding: 8px 12px !important;
     border: none !important;
     background: transparent !important;
     border-radius: 20px !important;
     cursor: pointer !important;
     transition: all 0.3s ease !important;
-    color: #333 !important;
-    font-size: 0.9rem !important;
+    color: white !important;
+    font-size: 0.85rem !important;
     font-weight: 600 !important;
-    min-width: 40px !important;
+    position: relative !important;
+    z-index: 2 !important;
+    min-width: 45px !important;
+}
+
+.lang-btn.active {
+    color: #333 !important;
+}
+
+.lang-btn:hover {
+    transform: translateY(-1px);
+}
+
+.flag {
+    font-size: 1rem !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.lang-text {
+    font-weight: 700 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .lang-btn:hover {
@@ -2029,25 +2066,70 @@ body {
     font-weight: 600;
 }
 
-/* Theme Switcher */
+/* Theme Switcher - BEAUTIFUL SUN/MOON */
 .theme-switcher {
-    position: relative;
+    position: relative !important;
 }
 
 .theme-btn {
-    width: 50px !important;
-    height: 50px !important;
-    border-radius: 50%;
-    border: 3px solid #FFD700 !important; /* Gold border for visibility */
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    border: none !important;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    color: white !important;
+    cursor: pointer !important;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
     display: flex !important;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.2rem !important;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.theme-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 1;
+}
+
+.theme-btn.light-mode::before {
+    transform: scale(1);
+}
+
+.theme-btn i {
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    transform: translateY(-2px) scale(1.05) !important;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5) !important;
+}
+
+.theme-btn:active {
+    transform: translateY(0) scale(0.95) !important;
+}
+
+/* Icon animations */
+.theme-btn i {
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-2px) rotate(5deg); }
 }
 
 .theme-btn:hover {
@@ -2167,18 +2249,14 @@ body {
     transform: translateY(0);
     transition: all 0.2s ease 0.1s;
 }
-/* FORCE CONTROLS TO SHOW ON ALL DEVICES */
+/* RESPONSIVE CONTROLS */
 @media (max-width: 768px) {
     .nav-controls {
-        display: flex !important;
-        position: fixed !important;
-        top: 10px !important;
-        right: 10px !important;
-        background: rgba(255, 0, 0, 0.9) !important;
-        z-index: 99999 !important;
-        padding: 10px !important;
-        border-radius: 8px !important;
-        border: 3px solid yellow !important;
+        order: 3 !important;
+        margin-left: 0 !important;
+        margin-top: 10px !important;
+        width: 100% !important;
+        justify-content: center !important;
     }
     
     .language-switcher,
@@ -2192,13 +2270,10 @@ body {
     }
 }
 
-/* DESKTOP FORCE SHOW */
+/* DESKTOP RESPONSIVE */
 @media (min-width: 769px) {
     .nav-controls {
         display: flex !important;
-        background: rgba(255, 0, 0, 0.9) !important;
-        border: 3px solid yellow !important;
-        padding: 15px !important;
-        margin-left: 20px !important;
+        margin-left: auto !important;
     }
 }
