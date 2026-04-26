@@ -253,31 +253,76 @@ class ThemeLanguageManager {
         // Theme toggle
         const themeToggle = document.getElementById('themeToggle');
         if (themeToggle) {
-            themeToggle.addEventListener('click', () => this.toggleTheme());
+            // Support both click and touch events
+            themeToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.toggleTheme();
+            });
+            
+            themeToggle.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                this.toggleTheme();
+            });
         }
 
         // Language buttons
         document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
+            // Support both click and touch events
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = btn.dataset.lang;
+                this.switchLanguage(lang);
+            });
+            
+            btn.addEventListener('touchend', (e) => {
+                e.preventDefault();
                 const lang = btn.dataset.lang;
                 this.switchLanguage(lang);
             });
         });
 
-        // Keyboard shortcuts
-        document.addEventListener('keydown', (e) => {
-            // Ctrl + Shift + T for theme toggle
-            if (e.ctrlKey && e.shiftKey && e.key === 'T') {
-                e.preventDefault();
-                this.toggleTheme();
-            }
+        // Keyboard shortcuts (desktop only)
+        if (window.innerWidth > 768) {
+            document.addEventListener('keydown', (e) => {
+                // Ctrl + Shift + T for theme toggle
+                if (e.ctrlKey && e.shiftKey && e.key === 'T') {
+                    e.preventDefault();
+                    this.toggleTheme();
+                }
+                
+                // Ctrl + Shift + L for language toggle
+                if (e.ctrlKey && e.shiftKey && e.key === 'L') {
+                    e.preventDefault();
+                    const newLang = this.currentLanguage === 'hi' ? 'en' : 'hi';
+                    this.switchLanguage(newLang);
+                }
+            });
+        }
+        
+        // Mobile-specific touch events
+        if ('ontouchstart' in window) {
+            this.setupMobileTouchEvents();
+        }
+    }
+    
+    // Mobile touch events
+    setupMobileTouchEvents() {
+        // Add touch feedback
+        document.querySelectorAll('.lang-btn, .theme-btn').forEach(btn => {
+            btn.addEventListener('touchstart', () => {
+                btn.style.transform = 'scale(0.95)';
+            });
             
-            // Ctrl + Shift + L for language toggle
-            if (e.ctrlKey && e.shiftKey && e.key === 'L') {
-                e.preventDefault();
-                const newLang = this.currentLanguage === 'hi' ? 'en' : 'hi';
-                this.switchLanguage(newLang);
-            }
+            btn.addEventListener('touchend', () => {
+                setTimeout(() => {
+                    btn.style.transform = '';
+                }, 150);
+            });
+        });
+        
+        // Prevent double-tap zoom on controls
+        document.querySelector('.nav-controls').addEventListener('touchend', (e) => {
+            e.preventDefault();
         });
     }
 
@@ -310,18 +355,23 @@ class ThemeLanguageManager {
             </div>
         `;
         
+        // Mobile-responsive positioning
+        const isMobile = window.innerWidth <= 768;
+        
         // Add styles
         notification.style.cssText = `
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: ${isMobile ? '80px' : '20px'};
+            right: ${isMobile ? '15px' : '20px'};
+            ${isMobile ? 'left: 15px;' : ''}
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 15px 20px;
+            padding: ${isMobile ? '12px 15px' : '15px 20px'};
             border-radius: 12px;
             box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
             z-index: 10001;
             font-weight: 500;
+            font-size: ${isMobile ? '0.9rem' : '1rem'};
             animation: slideInRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);

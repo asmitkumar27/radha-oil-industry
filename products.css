@@ -845,3 +845,231 @@
         margin-top: 10px;
     }
 }
+/* MOBILE PRODUCTS PAGE ENHANCEMENTS */
+@media (max-width: 768px) {
+    /* Mobile Navigation for Products */
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 15px;
+    }
+    
+    .logo-container {
+        width: 100%;
+        justify-content: center;
+        order: 1;
+    }
+    
+    /* Mobile Controls for Products Page */
+    .nav-controls {
+        position: fixed !important;
+        top: 15px !important;
+        right: 15px !important;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.9)) !important;
+        padding: 8px !important;
+        border-radius: 25px !important;
+        backdrop-filter: blur(20px) !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+        border: 1px solid rgba(255, 215, 0, 0.4) !important;
+        z-index: 10000 !important;
+        gap: 8px !important;
+        margin: 0 !important;
+    }
+    
+    .cart-icon {
+        position: fixed !important;
+        top: 15px !important;
+        left: 15px !important;
+        background: linear-gradient(135deg, #667eea, #764ba2) !important;
+        color: white !important;
+        padding: 12px !important;
+        border-radius: 50% !important;
+        box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3) !important;
+        z-index: 10000 !important;
+        width: 50px !important;
+        height: 50px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .cart-count {
+        position: absolute !important;
+        top: -5px !important;
+        right: -5px !important;
+        background: #FFD700 !important;
+        color: #333 !important;
+        font-weight: 700 !important;
+        font-size: 0.8rem !important;
+        min-width: 20px !important;
+        height: 20px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    /* Mobile Products Header */
+    .products-header {
+        padding-top: 120px !important;
+        padding-bottom: 30px !important;
+        text-align: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #FFD700 100%);
+        color: white;
+    }
+    
+    .products-header h1 {
+        font-size: 2rem !important;
+        margin-bottom: 10px;
+    }
+    
+    .products-header p {
+        font-size: 1rem !important;
+    }
+    
+    /* Mobile Products Grid */
+    .products-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 20px 15px !important;
+    }
+    
+    .product-card {
+        border-radius: 20px !important;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.9)) !important;
+        backdrop-filter: blur(15px) !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+        border: 1px solid rgba(255, 215, 0, 0.2) !important;
+        overflow: hidden !important;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+    }
+    
+    .product-card:hover {
+        transform: translateY(-5px) scale(1.02) !important;
+        box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3) !important;
+    }
+    
+    .product-image {
+        height: 200px !important;
+        border-radius: 15px 15px 0 0 !important;
+    }
+    
+    .product-info {
+        padding: 20px !important;
+    }
+    
+    .product-title {
+        font-size: 1.3rem !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .product-description {
+        font-size: 0.9rem !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .product-features {
+        margin-bottom: 15px !important;
+    }
+    
+    .product-features li {
+        font-size: 0.85rem !important;
+        padding: 5px 0 !important;
+    }
+    
+    .add-to-cart-btn {
+        width: 100% !important;
+        padding: 15px !important;
+        font-size: 1.1rem !important;
+        border-radius: 15px !important;
+        background: linear-gradient(135deg, #667eea, #764ba2) !important;
+        color: white !important;
+        border: none !important;
+        font-weight: 600 !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .add-to-cart-btn:hover {
+        background: linear-gradient(135deg, #FFD700, #FFA500) !important;
+        color: #333 !important;
+        transform: translateY(-2px) !important;
+    }
+    
+    /* Mobile Cart Sidebar */
+    .cart-sidebar {
+        width: 100% !important;
+        right: -100% !important;
+        border-radius: 20px 20px 0 0 !important;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.9)) !important;
+        backdrop-filter: blur(20px) !important;
+    }
+    
+    .cart-sidebar.open {
+        right: 0 !important;
+    }
+    
+    .cart-header {
+        padding: 20px !important;
+        background: linear-gradient(135deg, #667eea, #764ba2) !important;
+        color: white !important;
+        border-radius: 20px 20px 0 0 !important;
+    }
+    
+    .cart-items {
+        max-height: 50vh !important;
+        padding: 15px !important;
+    }
+    
+    .cart-item {
+        margin-bottom: 15px !important;
+        padding: 15px !important;
+        border-radius: 15px !important;
+        background: rgba(255, 255, 255, 0.8) !important;
+        backdrop-filter: blur(10px) !important;
+    }
+    
+    /* Mobile Order Modal */
+    .order-modal .modal-content {
+        width: 95% !important;
+        max-width: none !important;
+        margin: 20px auto !important;
+        border-radius: 20px !important;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.9)) !important;
+        backdrop-filter: blur(20px) !important;
+    }
+    
+    .modal-header {
+        padding: 20px !important;
+        background: linear-gradient(135deg, #667eea, #764ba2) !important;
+        color: white !important;
+        border-radius: 20px 20px 0 0 !important;
+    }
+    
+    .order-form input,
+    .order-form textarea {
+        padding: 15px !important;
+        font-size: 1rem !important;
+        border-radius: 15px !important;
+        border: 2px solid rgba(255, 215, 0, 0.3) !important;
+        background: rgba(255, 255, 255, 0.8) !important;
+        backdrop-filter: blur(10px) !important;
+    }
+    
+    .order-form input:focus,
+    .order-form textarea:focus {
+        border-color: #FFD700 !important;
+        box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2) !important;
+    }
+    
+    /* Mobile Touch Interactions */
+    .product-card,
+    .cart-item,
+    .add-to-cart-btn {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    .add-to-cart-btn:active {
+        transform: scale(0.98) !important;
+    }
+}
