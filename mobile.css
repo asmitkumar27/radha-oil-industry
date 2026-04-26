@@ -26,12 +26,12 @@
         max-width: 100%;
     }
     
-    /* Logo - Center */
+    /* Logo - Left Aligned */
     .logo-container {
         flex: 1 1 100%;
         order: 1;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         margin-bottom: 15px;
     }
     
