@@ -37,11 +37,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
+    order: 1;
 }
 
 .logo {
@@ -331,6 +334,7 @@ body {
     display: flex;
     list-style: none;
     gap: 2rem;
+    order: 3;
 }
 
 .nav-menu a {
@@ -364,6 +368,7 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    order: 4;
 }
 
 .hamburger span {
@@ -1965,6 +1970,8 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
+    margin-left: auto;
+    order: 2;
 }
 
 /* Language Switcher */
