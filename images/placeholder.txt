@@ -1,0 +1,30 @@
+📸 Add Your Real Product Photos Here!
+
+IMPORTANT: Save the mustard oil photo you provided as "mustard-oil.jpg" in this folder!
+
+Required photo files:
+- mustard-oil.jpg        (सरसों का तेल) ✅ READY TO USE - Save your photo here!
+- linseed-oil.jpg        (अलसी का तेल)  
+- wheat-flour.jpg        (गेहूं का आटा)
+- maida.jpg              (मैदा)
+- turmeric-powder.jpg    (हल्दी पाउडर)
+- coriander-powder.jpg   (धनिया पाउडर)
+- chili-powder.jpg       (मिर्च पाउडर)
+
+Instructions for Mustard Oil Photo:
+1. Right-click on the mustard oil image you provided
+2. Save it as "mustard-oil.jpg" 
+3. Copy it to this images folder
+4. Replace the placeholder file
+5. Refresh your website to see the beautiful photo!
+
+The photo you provided is perfect because it shows:
+- Beautiful golden mustard oil in a glass bottle
+- Mustard seeds scattered around
+- Yellow mustard flowers
+- Traditional rustic setting
+- Professional lighting and composition
+
+This will make your mustard oil product look very attractive to customers!
+
+The website will show beautiful colored fallbacks until you add your real photos.

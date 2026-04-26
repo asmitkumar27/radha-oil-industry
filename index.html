@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radha Oil Industry - प्राकृतिक तेल और मसाले</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-circle">
+                        <div class="logo-inner">
+                            <div class="farmer-silhouette">
+                                <div class="farmer-head"></div>
+                                <div class="farmer-body"></div>
+                                <div class="farmer-arms">
+                                    <div class="arm-left"></div>
+                                    <div class="arm-right"></div>
+                                </div>
+                                <div class="farmer-tool"></div>
+                            </div>
+                            <div class="crop-field">
+                                <div class="crop crop-1"></div>
+                                <div class="crop crop-2"></div>
+                                <div class="crop crop-3"></div>
+                                <div class="crop crop-4"></div>
+                                <div class="crop crop-5"></div>
+                            </div>
+                            <div class="sun-rays">
+                                <div class="ray ray-1"></div>
+                                <div class="ray ray-2"></div>
+                                <div class="ray ray-3"></div>
+                                <div class="ray ray-4"></div>
+                            </div>
+                        </div>
+                        <div class="logo-glow"></div>
+                    </div>
+                    <div class="logo-text">
+                        <h2>Radha Oil Industry</h2>
+                        <p>किसान से रसोई तक</p>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">होम</a></li>
+                <li><a href="#products">उत्पाद</a></li>
+                <li><a href="#about">हमारे बारे में</a></li>
+                <li><a href="#contact">संपर्क</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="floating-particles"></div>
+            <div class="animated-fields">
+                <div class="field-wave wave-1"></div>
+                <div class="field-wave wave-2"></div>
+                <div class="field-wave wave-3"></div>
+            </div>
+            <div class="floating-elements">
+                <div class="floating-leaf leaf-1">🍃</div>
+                <div class="floating-leaf leaf-2">🌾</div>
+                <div class="floating-leaf leaf-3">🍃</div>
+                <div class="floating-leaf leaf-4">🌿</div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title animate-on-scroll">
+                    <span class="highlight">प्राकृतिक</span> तेल और मसालों का
+                    <span class="highlight">विश्वसनीय</span> स्रोत
+                </h1>
+                <p class="hero-subtitle animate-on-scroll">
+                    परंपरागत तरीकों से बनाए गए शुद्ध तेल और मसाले
+                </p>
+                <div class="hero-buttons animate-on-scroll">
+                    <button class="btn-primary pulse-animation" onclick="window.location.href='products.html'">
+                        <i class="fas fa-shopping-cart"></i>
+                        अभी खरीदें
+                        <div class="button-ripple"></div>
+                    </button>
+                    <button class="btn-secondary hover-lift" onclick="openLearnMoreModal()">
+                        <i class="fas fa-info-circle"></i>
+                        और जानें
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image animate-on-scroll">
+                <div class="product-showcase">
+                    <div class="floating-product product-1 bounce-animation">
+                        <img src="images/mustard-oil.jpg" alt="सरसों का तेल" onerror="this.src='https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=200&h=200&fit=crop'">
+                        <div class="product-glow"></div>
+                    </div>
+                    <div class="floating-product product-2 bounce-animation">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=200&h=200&fit=crop" alt="हल्दी पाउडर">
+                        <div class="product-glow"></div>
+                    </div>
+                    <div class="floating-product product-3 bounce-animation">
+                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200&h=200&fit=crop" alt="आटा">
+                        <div class="product-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <p>नीचे स्क्रॉल करें</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="typing-animation">हमारे उत्पाद</h2>
+                <p>प्राकृतिक और शुद्ध गुणवत्ता के साथ</p>
+                <div style="margin-top: 20px;">
+                    <button class="btn-primary hover-lift pulse-animation" onclick="window.location.href='products.html'" style="background: linear-gradient(135deg, #FFD700, #FFA500); color: #333; border: none; padding: 12px 25px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                        <i class="fas fa-shopping-cart"></i>
+                        सभी उत्पाद देखें और खरीदें
+                        <div class="button-ripple"></div>
+                    </button>
+                </div>
+            </div>
+            <div class="products-preview animate-on-scroll">
+                <div class="product-card-mini hover-lift">
+                    <div class="product-icon">🛢️</div>
+                    <h3>सरसों का तेल</h3>
+                    <p>₹180/लीटर</p>
+                </div>
+                <div class="product-card-mini hover-lift">
+                    <div class="product-icon">🌾</div>
+                    <h3>गेहूं का आटा</h3>
+                    <p>₹45/किलो</p>
+                </div>
+                <div class="product-card-mini hover-lift">
+                    <div class="product-icon">🟡</div>
+                    <h3>हल्दी पाउडर</h3>
+                    <p>₹120/किलो</p>
+                </div>
+                <div class="product-card-mini hover-lift">
+                    <div class="product-icon">🔴</div>
+                    <h3>मिर्च पाउडर</h3>
+                    <p>₹150/किलो</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text animate-on-scroll">
+                    <h2 class="slide-in-left">राधा ऑयल इंडस्ट्री</h2>
+                    <p class="about-subtitle slide-in-left">परंपरा और गुणवत्ता का संगम</p>
+                    <div class="timeline">
+                        <div class="timeline-item slide-in-up">
+                            <div class="timeline-year pulse-number">2025</div>
+                            <div class="timeline-content">
+                                <h4>स्थापना</h4>
+                                <p>राधा ऑयल इंडस्ट्री की शुरुआत प्राकृतिक तेल और मसालों के साथ</p>
+                            </div>
+                            <div class="timeline-icon">🌱</div>
+                        </div>
+                    </div>
+                    <div class="features-grid animate-on-scroll">
+                        <div class="feature-item hover-lift">
+                            <div class="feature-icon">🌾</div>
+                            <h4>प्राकृतिक</h4>
+                            <p>100% शुद्ध और प्राकृतिक उत्पाद</p>
+                        </div>
+                        <div class="feature-item hover-lift">
+                            <div class="feature-icon">👨‍🌾</div>
+                            <h4>किसान से सीधे</h4>
+                            <p>सीधे किसानों से खरीदारी</p>
+                        </div>
+                        <div class="feature-item hover-lift">
+                            <div class="feature-icon">✅</div>
+                            <h4>गुणवत्ता</h4>
+                            <p>उच्च गुणवत्ता की गारंटी</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image animate-on-scroll">
+                    <div class="image-container hover-lift">
+                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=500&h=400&fit=crop" alt="फैक्टरी">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3>हमारी फैक्टरी</h3>
+                                <p>आधुनिक तकनीक के साथ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>संपर्क करें</h2>
+                <p>हमसे जुड़ें और अपने ऑर्डर दें</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>पता</h4>
+                            <p>मदनपुर, बरौर<br>कानपुर देहात, उत्तर प्रदेश</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>फोन</h4>
+                            <p>+91 9580383682</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>ईमेल</h4>
+                            <p>asmitsachan27@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="आपका नाम" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="फोन नंबर" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">उत्पाद चुनें</option>
+                                <option value="mustard-oil">सरसों का तेल</option>
+                                <option value="linseed-oil">अलसी का तेल</option>
+                                <option value="wheat-flour">गेहूं का आटा</option>
+                                <option value="refined-flour">मैदा</option>
+                                <option value="turmeric">हल्दी पाउडर</option>
+                                <option value="coriander">धनिया पाउडर</option>
+                                <option value="chili">मिर्च पाउडर</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="मैसेज (वैकल्पिक)"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            भेजें
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="quick-contact">
+                <a href="https://wa.me/919580383682" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp पर ऑर्डर करें
+                </a>
+                <a href="tel:+919580383682" class="call-btn">
+                    <i class="fas fa-phone"></i>
+                    कॉल करें
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <div class="logo-circle">
+                            <div class="oil-drop"></div>
+                        </div>
+                        <h3>Radha Oil Industry</h3>
+                    </div>
+                    <p>प्राकृतिक गुणवत्ता के साथ नया अनुभव</p>
+                </div>
+                <div class="footer-section">
+                    <h4>त्वरित लिंक</h4>
+                    <ul>
+                        <li><a href="#home">होम</a></li>
+                        <li><a href="#products">उत्पाद</a></li>
+                        <li><a href="#about">हमारे बारे में</a></li>
+                        <li><a href="#contact">संपर्क</a></li>
+                        <li><a href="admin.html" style="color: #FFD700;">🔧 Admin Panel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>उत्पाद</h4>
+                    <ul>
+                        <li>सरसों का तेल</li>
+                        <li>अलसी का तेल</li>
+                        <li>मसाला पाउडर</li>
+                        <li>आटा और मैदा</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>फॉलो करें</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Radha Oil Industry. सभी अधिकार सुरक्षित। | <a href="admin.html" style="color: #666; text-decoration: none;">Admin Panel</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Learn More Modal -->
+    <div class="learn-more-modal" id="learnMoreModal">
+        <div class="modal-overlay" onclick="closeLearnMoreModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>राधा ऑयल इंडस्ट्री के बारे में विस्तार से जानें</h2>
+                <button class="close-modal" onclick="closeLearnMoreModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="info-tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" onclick="showTab('company')">
+                            <i class="fas fa-building"></i>
+                            कंपनी
+                        </button>
+                        <button class="tab-btn" onclick="showTab('quality')">
+                            <i class="fas fa-award"></i>
+                            गुणवत्ता
+                        </button>
+                        <button class="tab-btn" onclick="showTab('process')">
+                            <i class="fas fa-cogs"></i>
+                            प्रक्रिया
+                        </button>
+                        <button class="tab-btn" onclick="showTab('benefits')">
+                            <i class="fas fa-heart"></i>
+                            फायदे
+                        </button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <!-- Company Tab -->
+                        <div class="tab-panel active" id="company">
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <div class="info-icon">🏭</div>
+                                    <h3>हमारी फैक्टरी</h3>
+                                    <p>मदनपुर, बरौर में स्थित हमारी आधुनिक फैक्टरी में सभी उत्पाद तैयार किए जाते हैं। यहाँ हम पारंपरिक तरीकों और आधुनिक तकनीक का संयोजन करते हैं।</p>
+                                </div>
+                                <div class="info-card">
+                                    <div class="info-icon">👨‍🌾</div>
+                                    <h3>किसान साझेदारी</h3>
+                                    <p>हम स्थानीय किसानों से सीधे कच्चा माल खरीदते हैं, जिससे उन्हें उचित मूल्य मिलता है और हमें बेहतरीन गुणवत्ता का माल मिलता है।</p>
+                                </div>
+                                <div class="info-card">
+                                    <div class="info-icon">🌱</div>
+                                    <h3>प्राकृतिक उत्पाद</h3>
+                                    <p>हमारे सभी उत्पाद 100% प्राकृतिक हैं। कोई रसायन, कोई मिलावट, केवल शुद्ध और प्राकृतिक सामग्री का उपयोग।</p>
+                                </div>
+                                <div class="info-card">
+                                    <div class="info-icon">🚚</div>
+                                    <h3>तेज़ डिलीवरी</h3>
+                                    <p>कानपुर देहात और आसपास के क्षेत्रों में हम 24-48 घंटे में डिलीवरी करते हैं। ताज़गी की गारंटी के साथ।</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quality Tab -->
+                        <div class="tab-panel" id="quality">
+                            <div class="quality-features">
+                                <div class="quality-item">
+                                    <div class="quality-badge">✅</div>
+                                    <div class="quality-text">
+                                        <h4>ISO प्रमाणित</h4>
+                                        <p>हमारी फैक्टरी ISO मानकों के अनुसार संचालित होती है</p>
+                                    </div>
+                                </div>
+                                <div class="quality-item">
+                                    <div class="quality-badge">🧪</div>
+                                    <div class="quality-text">
+                                        <h4>लैब टेस्टेड</h4>
+                                        <p>प्रत्येक बैच की गुणवत्ता जांच प्रमाणित लैब में की जाती है</p>
+                                    </div>
+                                </div>
+                                <div class="quality-item">
+                                    <div class="quality-badge">🏆</div>
+                                    <div class="quality-text">
+                                        <h4>पुरस्कार प्राप्त</h4>
+                                        <p>स्थानीय व्यापार संघ द्वारा सर्वश्रेष्ठ गुणवत्ता का पुरस्कार</p>
+                                    </div>
+                                </div>
+                                <div class="quality-item">
+                                    <div class="quality-badge">🌟</div>
+                                    <div class="quality-text">
+                                        <h4>ग्राहक संतुष्टि</h4>
+                                        <p>98% ग्राहक संतुष्टि दर और 5-स्टार रेटिंग</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Process Tab -->
+                        <div class="tab-panel" id="process">
+                            <div class="process-steps">
+                                <div class="step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h4>कच्चा माल चयन</h4>
+                                        <p>सर्वोत्तम गुणवत्ता के बीज और अनाज का चयन स्थानीय किसानों से</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h4>सफाई और छंटाई</h4>
+                                        <p>आधुनिक मशीनों से सफाई और हाथ से गुणवत्ता जांच</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h4>प्रसंस्करण</h4>
+                                        <p>पारंपरिक कोल्ड प्रेसिंग और पीसने की विधि</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h4>पैकेजिंग</h4>
+                                        <p>हाइजीनिक वातावरण में सुरक्षित पैकेजिंग</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Benefits Tab -->
+                        <div class="tab-panel" id="benefits">
+                            <div class="benefits-grid">
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">💪</div>
+                                    <h4>स्वास्थ्य लाभ</h4>
+                                    <ul>
+                                        <li>प्राकृतिक विटामिन और मिनरल्स</li>
+                                        <li>कोई हानिकारक रसायन नहीं</li>
+                                        <li>पाचन में सुधार</li>
+                                        <li>प्राकृतिक एंटीऑक्सीडेंट्स</li>
+                                    </ul>
+                                </div>
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">🍽️</div>
+                                    <h4>पाक कला में फायदे</h4>
+                                    <ul>
+                                        <li>बेहतर स्वाद और खुशबू</li>
+                                        <li>लंबी शेल्फ लाइफ</li>
+                                        <li>पारंपरिक व्यंजनों के लिए आदर्श</li>
+                                        <li>पोषक तत्वों की सुरक्षा</li>
+                                    </ul>
+                                </div>
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">💰</div>
+                                    <h4>आर्थिक लाभ</h4>
+                                    <ul>
+                                        <li>प्रतिस्पर्धी मूल्य</li>
+                                        <li>थोक खरीदारी पर छूट</li>
+                                        <li>मुफ्त होम डिलीवरी</li>
+                                        <li>वफादार ग्राहकों के लिए विशेष ऑफर</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <div class="contact-quick">
+                        <h4>अभी संपर्क करें:</h4>
+                        <div class="quick-contact-buttons">
+                            <a href="tel:+919580383682" class="quick-btn call-btn">
+                                <i class="fas fa-phone"></i>
+                                कॉल करें
+                            </a>
+                            <a href="https://wa.me/919580383682" class="quick-btn whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                WhatsApp
+                            </a>
+                            <button onclick="window.location.href='products.html'" class="quick-btn shop-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                खरीदारी करें
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="animations.js"></script>
+</body>
+</html>
