@@ -223,11 +223,20 @@ class ThemeLanguageManager {
             });
             
             // Translate placeholder text
-            document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(element => {
-                const currentPlaceholder = element.placeholder;
-                const translation = this.translations[this.currentLanguage][currentPlaceholder];
-                if (translation) {
-                    element.placeholder = translation;
+            document.querySelectorAll('input[data-placeholder-en][data-placeholder-hi], textarea[data-placeholder-en][data-placeholder-hi]').forEach(element => {
+                const key = this.currentLanguage === 'hi' ? 'data-placeholder-hi' : 'data-placeholder-en';
+                const placeholder = element.getAttribute(key);
+                if (placeholder) {
+                    element.placeholder = placeholder;
+                }
+            });
+            
+            // Translate select options
+            document.querySelectorAll('option[data-en][data-hi]').forEach(element => {
+                const key = this.currentLanguage === 'hi' ? 'data-hi' : 'data-en';
+                const text = element.getAttribute(key);
+                if (text) {
+                    element.textContent = text;
                 }
             });
             

@@ -3,27 +3,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Mobile JS loaded');
     
-    // Hamburger Menu Toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('Hamburger clicked');
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-        
-        // Close menu when clicking on a link
-        const navLinks = document.querySelectorAll('.nav-menu a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-    }
+
     
     // Language Switcher - SIMPLE VERSION
     const langButtons = document.querySelectorAll('.lang-btn');
@@ -67,6 +47,24 @@ document.addEventListener('DOMContentLoaded', function() {
         const elements = document.querySelectorAll('[data-en][data-hi]');
         
         elements.forEach(el => {
+            const text = lang === 'hi' ? el.getAttribute('data-hi') : el.getAttribute('data-en');
+            if (text) {
+                el.textContent = text;
+            }
+        });
+        
+        // Translate placeholders
+        const placeholderElements = document.querySelectorAll('[data-placeholder-en][data-placeholder-hi]');
+        placeholderElements.forEach(el => {
+            const placeholder = lang === 'hi' ? el.getAttribute('data-placeholder-hi') : el.getAttribute('data-placeholder-en');
+            if (placeholder) {
+                el.placeholder = placeholder;
+            }
+        });
+        
+        // Translate select options
+        const optionElements = document.querySelectorAll('option[data-en][data-hi]');
+        optionElements.forEach(el => {
             const text = lang === 'hi' ? el.getAttribute('data-hi') : el.getAttribute('data-en');
             if (text) {
                 el.textContent = text;

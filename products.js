@@ -3,73 +3,108 @@ const defaultProducts = [
     {
         id: 1,
         name: "सरसों का तेल",
+        nameEn: "Mustard Oil",
         description: "शुद्ध कोल्ड प्रेस्ड सरसों का तेल",
+        descriptionEn: "Pure cold pressed mustard oil",
         price: 180,
         unit: "लीटर",
+        unitEn: "Liter",
         image: "images/mustard-oil.jpg",
         fallbackImage: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&h=300&fit=crop&q=80",
         features: ["कोल्ड प्रेस्ड", "100% शुद्ध", "प्राकृतिक", "बिना रसायन"],
-        badge: "बेस्ट सेलर"
+        featuresEn: ["Cold Pressed", "100% Pure", "Natural", "Chemical Free"],
+        badge: "बेस्ट सेलर",
+        badgeEn: "Best Seller"
     },
     {
         id: 2,
         name: "अलसी का तेल",
+        nameEn: "Linseed Oil",
         description: "प्रीमियम क्वालिटी अलसी का तेल",
+        descriptionEn: "Premium quality linseed oil",
         price: 220,
         unit: "लीटर",
+        unitEn: "Liter",
         image: "images/linseed-oil.jpg",
         features: ["ओमेगा-3 भरपूर", "हृदय के लिए अच्छा", "प्राकृतिक", "ताजा निकाला गया"],
-        badge: "प्रीमियम"
+        featuresEn: ["Rich in Omega-3", "Good for Heart", "Natural", "Freshly Extracted"],
+        badge: "प्रीमियम",
+        badgeEn: "Premium"
     },
     {
         id: 3,
         name: "गेहूं का आटा",
+        nameEn: "Wheat Flour",
         description: "ताजा पिसा हुआ साबुत गेहूं का आटा",
+        descriptionEn: "Fresh ground whole wheat flour",
         price: 45,
         unit: "किलो",
+        unitEn: "Kg",
         image: "images/wheat-flour.jpg",
         features: ["साबुत गेहूं", "ताजा पिसा", "फाइबर युक्त", "पोषक तत्वों से भरपूर"],
-        badge: "ताजा"
+        featuresEn: ["Whole Wheat", "Freshly Ground", "High Fiber", "Rich in Nutrients"],
+        badge: "ताजा",
+        badgeEn: "Fresh"
     },
     {
         id: 4,
         name: "मैदा",
+        nameEn: "Refined Flour",
         description: "उच्च गुणवत्ता का रिफाइंड आटा",
+        descriptionEn: "High quality refined flour",
         price: 40,
         unit: "किलो",
+        unitEn: "Kg",
         image: "images/maida.jpg",
         features: ["महीन पिसा", "सफेद रंग", "बेकिंग के लिए आदर्श", "लंबी शेल्फ लाइफ"],
-        badge: "क्वालिटी"
+        featuresEn: ["Finely Ground", "White Color", "Perfect for Baking", "Long Shelf Life"],
+        badge: "क्वालिटी",
+        badgeEn: "Quality"
     },
     {
         id: 5,
         name: "हल्दी पाउडर",
+        nameEn: "Turmeric Powder",
         description: "शुद्ध पिसी हुई हल्दी",
+        descriptionEn: "Pure ground turmeric",
         price: 120,
         unit: "किलो",
+        unitEn: "Kg",
         image: "images/turmeric-powder.jpg",
         features: ["100% शुद्ध", "तेज रंग", "औषधीय गुण", "ताजी पिसी"],
-        badge: "ऑर्गेनिक"
+        featuresEn: ["100% Pure", "Bright Color", "Medicinal Properties", "Freshly Ground"],
+        badge: "ऑर्गेनिक",
+        badgeEn: "Organic"
     },
     {
         id: 6,
         name: "धनिया पाउडर",
+        nameEn: "Coriander Powder",
         description: "ताजा पिसा धनिया पाउडर",
+        descriptionEn: "Fresh ground coriander powder",
         price: 100,
         unit: "किलो",
+        unitEn: "Kg",
         image: "images/coriander-powder.jpg",
         features: ["सुगंधित", "ताजा पिसा", "प्राकृतिक स्वाद", "बिना मिलावट"],
-        badge: "ताजा"
+        featuresEn: ["Aromatic", "Freshly Ground", "Natural Flavor", "No Adulteration"],
+        badge: "ताजा",
+        badgeEn: "Fresh"
     },
     {
         id: 7,
         name: "मिर्च पाउडर",
+        nameEn: "Chili Powder",
         description: "तेज लाल मिर्च का पाउडर",
+        descriptionEn: "Hot red chili powder",
         price: 150,
         unit: "किलो",
+        unitEn: "Kg",
         image: "images/chili-powder.jpg",
         features: ["तेज स्वाद", "चटक लाल रंग", "शुद्ध मिर्च", "लंबे समय तक ताजा"],
-        badge: "स्पाइसी"
+        featuresEn: ["Hot Taste", "Bright Red Color", "Pure Chili", "Long Lasting Freshness"],
+        badge: "स्पाइसी",
+        badgeEn: "Spicy"
     }
 ];
 
@@ -85,7 +120,24 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCartUI();
     setupEventListeners();
     setupAdminSync(); // Add admin sync functionality
+    setupLanguageSync(); // Add language sync functionality
 });
+
+// Get current language
+function getCurrentLanguage() {
+    return localStorage.getItem('language') || 'hi';
+}
+
+// Setup language synchronization
+function setupLanguageSync() {
+    // Listen for language changes
+    window.addEventListener('storage', function(e) {
+        if (e.key === 'language') {
+            console.log('🌐 Language changed, refreshing products...');
+            loadProducts(); // Reload products with new language
+        }
+    });
+}
 
 // Load products from admin panel or use defaults
 function loadProductsFromAdmin() {
@@ -197,27 +249,30 @@ function loadProducts() {
 
 // Create product card HTML
 function createProductCard(product) {
+    const currentLang = getCurrentLanguage();
+    const isEnglish = currentLang === 'en';
+    
     const card = document.createElement('div');
     card.className = 'product-card';
     card.innerHTML = `
         <div class="product-image" style="background-size: cover; background-position: center;">
-            <div class="product-badge">${product.badge}</div>
+            <div class="product-badge">${isEnglish ? (product.badgeEn || product.badge) : product.badge}</div>
             <div class="image-fallback" style="display: none; background: ${getProductColor(product.id)}; color: #333; font-size: 2rem; display: flex; align-items: center; justify-content: center; height: 100%;">
-                ${getProductIcon(product.id)} ${product.name}
+                ${getProductIcon(product.id)} ${isEnglish ? (product.nameEn || product.name) : product.name}
             </div>
         </div>
         <div class="product-info">
-            <h3 class="product-title">${product.name}</h3>
-            <p class="product-description">${product.description}</p>
+            <h3 class="product-title">${isEnglish ? (product.nameEn || product.name) : product.name}</h3>
+            <p class="product-description">${isEnglish ? (product.descriptionEn || product.description) : product.description}</p>
             <ul class="product-features">
-                ${product.features.map(feature => `<li>${feature}</li>`).join('')}
+                ${(isEnglish ? (product.featuresEn || product.features) : product.features).map(feature => `<li>${feature}</li>`).join('')}
             </ul>
             <div class="product-pricing">
                 <div class="product-price">₹${product.price}</div>
-                <div class="product-unit">प्रति ${product.unit}</div>
+                <div class="product-unit">${isEnglish ? 'per' : 'प्रति'} ${isEnglish ? (product.unitEn || product.unit) : product.unit}</div>
             </div>
             <div class="quantity-selector">
-                <label>मात्रा:</label>
+                <label>${isEnglish ? 'Quantity:' : 'मात्रा:'}</label>
                 <div class="quantity-controls">
                     <button class="quantity-btn" onclick="decreaseQuantity(${product.id})">-</button>
                     <input type="number" class="quantity-input" id="qty-${product.id}" value="1" min="1" max="50">
@@ -226,7 +281,7 @@ function createProductCard(product) {
             </div>
             <button class="add-to-cart-btn" onclick="addToCart(${product.id})">
                 <i class="fas fa-cart-plus"></i>
-                कार्ट में डालें
+                ${isEnglish ? 'Add to Cart' : 'कार्ट में डालें'}
             </button>
         </div>
     `;
@@ -339,10 +394,13 @@ function addToCart(productId) {
 
 // Show add to cart animation
 function showAddToCartAnimation(productId) {
+    const currentLang = getCurrentLanguage();
+    const isEnglish = currentLang === 'en';
+    
     const button = document.querySelector(`button[onclick="addToCart(${productId})"]`);
     const originalText = button.innerHTML;
     
-    button.innerHTML = '<i class="fas fa-check"></i> जोड़ा गया!';
+    button.innerHTML = `<i class="fas fa-check"></i> ${isEnglish ? 'Added!' : 'जोड़ा गया!'}`;
     button.style.background = '#28a745';
     
     setTimeout(() => {
@@ -377,6 +435,9 @@ function updateCartUI() {
 }
 
 function updateCartDisplay() {
+    const currentLang = getCurrentLanguage();
+    const isEnglish = currentLang === 'en';
+    
     const cartItems = document.getElementById('cartItems');
     const cartTotal = document.getElementById('cartTotal');
     
@@ -384,9 +445,9 @@ function updateCartDisplay() {
         cartItems.innerHTML = `
             <div class="empty-cart">
                 <i class="fas fa-shopping-cart"></i>
-                <h3>आपका कार्ट खाली है</h3>
-                <p>कुछ उत्पाद जोड़ें</p>
-                <button class="continue-shopping" onclick="toggleCart()">खरीदारी जारी रखें</button>
+                <h3>${isEnglish ? 'Your cart is empty' : 'आपका कार्ट खाली है'}</h3>
+                <p>${isEnglish ? 'Add some products' : 'कुछ उत्पाद जोड़ें'}</p>
+                <button class="continue-shopping" onclick="toggleCart()">${isEnglish ? 'Continue Shopping' : 'खरीदारी जारी रखें'}</button>
             </div>
         `;
         cartTotal.textContent = '0';
@@ -405,8 +466,8 @@ function updateCartDisplay() {
         cartItem.innerHTML = `
             <div class="cart-item-image" style="background-image: url('${item.image}')"></div>
             <div class="cart-item-info">
-                <div class="cart-item-name">${item.name}</div>
-                <div class="cart-item-price">₹${item.price} प्रति ${item.unit}</div>
+                <div class="cart-item-name">${isEnglish ? (item.nameEn || item.name) : item.name}</div>
+                <div class="cart-item-price">₹${item.price} ${isEnglish ? 'per' : 'प्रति'} ${isEnglish ? (item.unitEn || item.unit) : item.unit}</div>
                 <div class="cart-item-quantity">
                     <button class="cart-quantity-btn" onclick="updateCartQuantity(${item.id}, -1)">-</button>
                     <span>${item.quantity}</span>
@@ -451,8 +512,11 @@ function saveCart() {
 
 // Checkout functionality
 function proceedToCheckout() {
+    const currentLang = getCurrentLanguage();
+    const isEnglish = currentLang === 'en';
+    
     if (cart.length === 0) {
-        alert('आपका कार्ट खाली है!');
+        alert(isEnglish ? 'Your cart is empty!' : 'आपका कार्ट खाली है!');
         return;
     }
     
@@ -471,7 +535,7 @@ function proceedToCheckout() {
         const summaryItem = document.createElement('div');
         summaryItem.className = 'summary-item';
         summaryItem.innerHTML = `
-            <span>${item.name} (${item.quantity} ${item.unit})</span>
+            <span>${isEnglish ? (item.nameEn || item.name) : item.name} (${item.quantity} ${isEnglish ? (item.unitEn || item.unit) : item.unit})</span>
             <span>₹${itemTotal}</span>
         `;
         orderSummary.appendChild(summaryItem);
@@ -493,12 +557,15 @@ function setupEventListeners() {
     orderForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
+        const currentLang = getCurrentLanguage();
+        const isEnglish = currentLang === 'en';
+        
         const customerName = document.getElementById('customerName').value;
         const customerPhone = document.getElementById('customerPhone').value;
         const customerAddress = document.getElementById('customerAddress').value;
         
         if (!customerName || !customerPhone || !customerAddress) {
-            alert('कृपया सभी फील्ड भरें');
+            alert(isEnglish ? 'Please fill all fields' : 'कृपया सभी फील्ड भरें');
             return;
         }
         
