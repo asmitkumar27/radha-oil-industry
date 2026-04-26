@@ -49,11 +49,34 @@
                 </div>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html">होम</a></li>
-                <li><a href="products.html" class="active">उत्पाद</a></li>
-                <li><a href="index.html#about">हमारे बारे में</a></li>
-                <li><a href="index.html#contact">संपर्क</a></li>
+                <li><a href="index.html" data-en="Home" data-hi="होम">होम</a></li>
+                <li><a href="products.html" class="active" data-en="Products" data-hi="उत्पाद">उत्पाद</a></li>
+                <li><a href="index.html#about" data-en="About" data-hi="हमारे बारे में">हमारे बारे में</a></li>
+                <li><a href="index.html#contact" data-en="Contact" data-hi="संपर्क">संपर्क</a></li>
             </ul>
+            
+            <!-- Theme & Language Controls -->
+            <div class="nav-controls">
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="hi">
+                        <span class="flag">🇮🇳</span>
+                        <span class="lang-text">हिं</span>
+                    </button>
+                    <button class="lang-btn" data-lang="en">
+                        <span class="flag">🇺🇸</span>
+                        <span class="lang-text">EN</span>
+                    </button>
+                </div>
+                
+                <!-- Theme Switcher -->
+                <div class="theme-switcher">
+                    <button class="theme-btn" id="themeToggle">
+                        <i class="fas fa-moon" id="themeIcon"></i>
+                    </button>
+                </div>
+            </div>
+            
             <div class="cart-icon" onclick="toggleCart()">
                 <i class="fas fa-shopping-cart"></i>
                 <span class="cart-count" id="cartCount">0</span>
@@ -154,5 +177,6 @@
 
     <script src="products.js"></script>
     <script src="animations.js"></script>
+    <script src="theme-language.js"></script>
 </body>
 </html>

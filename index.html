@@ -48,11 +48,33 @@
                 </div>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home">होम</a></li>
-                <li><a href="#products">उत्पाद</a></li>
-                <li><a href="#about">हमारे बारे में</a></li>
-                <li><a href="#contact">संपर्क</a></li>
+                <li><a href="#home" data-en="Home" data-hi="होम">होम</a></li>
+                <li><a href="#products" data-en="Products" data-hi="उत्पाद">उत्पाद</a></li>
+                <li><a href="#about" data-en="About" data-hi="हमारे बारे में">हमारे बारे में</a></li>
+                <li><a href="#contact" data-en="Contact" data-hi="संपर्क">संपर्क</a></li>
             </ul>
+            
+            <!-- Theme & Language Controls -->
+            <div class="nav-controls">
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="hi">
+                        <span class="flag">🇮🇳</span>
+                        <span class="lang-text">हिं</span>
+                    </button>
+                    <button class="lang-btn" data-lang="en">
+                        <span class="flag">🇺🇸</span>
+                        <span class="lang-text">EN</span>
+                    </button>
+                </div>
+                
+                <!-- Theme Switcher -->
+                <div class="theme-switcher">
+                    <button class="theme-btn" id="themeToggle">
+                        <i class="fas fa-moon" id="themeIcon"></i>
+                    </button>
+                </div>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -80,21 +102,21 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title animate-on-scroll">
-                    <span class="highlight">प्राकृतिक</span> तेल और मसालों का
-                    <span class="highlight">विश्वसनीय</span> स्रोत
+                    <span class="highlight" data-en="Natural" data-hi="प्राकृतिक">प्राकृतिक</span> <span data-en="oils and spices" data-hi="तेल और मसालों का">तेल और मसालों का</span>
+                    <span class="highlight" data-en="Trusted" data-hi="विश्वसनीय">विश्वसनीय</span> <span data-en="source" data-hi="स्रोत">स्रोत</span>
                 </h1>
-                <p class="hero-subtitle animate-on-scroll">
+                <p class="hero-subtitle animate-on-scroll" data-en="Pure oils and spices made with traditional methods" data-hi="परंपरागत तरीकों से बनाए गए शुद्ध तेल और मसाले">
                     परंपरागत तरीकों से बनाए गए शुद्ध तेल और मसाले
                 </p>
                 <div class="hero-buttons animate-on-scroll">
                     <button class="btn-primary pulse-animation" onclick="window.location.href='products.html'">
                         <i class="fas fa-shopping-cart"></i>
-                        अभी खरीदें
+                        <span data-en="Shop Now" data-hi="अभी खरीदें"></span>अभी खरीदें</span>
                         <div class="button-ripple"></div>
                     </button>
                     <button class="btn-secondary hover-lift" onclick="openLearnMoreModal()">
                         <i class="fas fa-info-circle"></i>
-                        और जानें
+                        <span data-en="Learn More" data-hi="और जानें">और जानें</span>
                     </button>
                 </div>
             </div>
@@ -523,5 +545,6 @@
 
     <script src="script.js"></script>
     <script src="animations.js"></script>
+    <script src="theme-language.js"></script>
 </body>
 </html>

@@ -1960,3 +1960,192 @@ body {
         text-align: center;
     }
 }
+/* Theme & Language Controls */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Language Switcher */
+.language-switcher {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 5px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    border: none;
+    background: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.lang-btn.active {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #333;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.flag {
+    font-size: 1.2rem;
+}
+
+.lang-text {
+    font-weight: 600;
+}
+
+/* Theme Switcher */
+.theme-switcher {
+    position: relative;
+}
+
+.theme-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.theme-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.theme-btn:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --accent-color: #FFD700;
+    --card-bg: #333333;
+    --border-color: #444444;
+}
+
+[data-theme="dark"] body {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .navbar {
+    background: rgba(26, 26, 26, 0.95);
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+}
+
+[data-theme="dark"] .hero::before {
+    background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.1));
+}
+
+[data-theme="dark"] .products,
+[data-theme="dark"] .about,
+[data-theme="dark"] .contact {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .product-card-mini,
+[data-theme="dark"] .feature-item,
+[data-theme="dark"] .contact-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .product-card-mini:hover,
+[data-theme="dark"] .feature-item:hover {
+    background: #404040;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+[data-theme="dark"] .footer {
+    background: #111111;
+    border-top: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .contact-form input,
+[data-theme="dark"] .contact-form select,
+[data-theme="dark"] .contact-form textarea {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .contact-form input:focus,
+[data-theme="dark"] .contact-form select:focus,
+[data-theme="dark"] .contact-form textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+}
+
+/* Theme transition */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Mobile Responsive for Controls */
+@media (max-width: 768px) {
+    .nav-controls {
+        gap: 10px;
+    }
+    
+    .lang-btn {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .theme-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .hamburger {
+        margin-left: 10px;
+    }
+}
+
+/* Language fade animation */
+.lang-fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+}
+
+.lang-fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.2s ease 0.1s;
+}
