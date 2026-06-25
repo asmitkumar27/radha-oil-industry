@@ -1,13 +1,15 @@
 // SIMPLE MOBILE JAVASCRIPT - GUARANTEED TO WORK
 
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Mobile JS loaded');
-    
-
+// Initialize immediately and also on DOM ready
+function initializeMobileJS() {
+    console.log('Mobile JS initializing...');
     
     // Language Switcher - SIMPLE VERSION
     const langButtons = document.querySelectorAll('.lang-btn');
     let currentLang = localStorage.getItem('language') || 'hi';
+    
+    console.log('Current language:', currentLang);
+    console.log('Language buttons found:', langButtons.length);
     
     // Set initial active button
     langButtons.forEach(btn => {
@@ -20,27 +22,55 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Language button click handler
     langButtons.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const newLang = this.dataset.lang;
-            
-            if (newLang === currentLang) return;
-            
-            console.log('Switching language to:', newLang);
-            currentLang = newLang;
-            localStorage.setItem('language', newLang);
-            
-            // Update active button
-            langButtons.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Translate page
-            translatePage(newLang);
-            
-            // Show notification
-            showNotification(newLang === 'hi' ? 'भाषा हिंदी में बदली गई' : 'Language changed to English');
-        });
+        // Remove any existing listeners
+        btn.removeEventListener('click', handleLanguageClick);
+        btn.removeEventListener('touchend', handleLanguageClick);
+        
+        // Add new listeners
+        btn.addEventListener('click', handleLanguageClick);
+        btn.addEventListener('touchend', handleLanguageClick);
     });
+    
+    function handleLanguageClick(e) {
+        e.preventDefault();
+        const newLang = this.dataset.lang;
+        
+        if (newLang === currentLang) return;
+        
+        console.log('Switching language to:', newLang);
+        currentLang = newLang;
+        localStorage.setItem('language', newLang);
+        
+        // Update active button
+        langButtons.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Translate page
+        translatePage(newLang);
+        
+        // Show notification
+        showNotification(newLang === 'hi' ? 'भाषा हिंदी में बदली गई' : 'Language changed to English');
+        
+        // Trigger storage event for other scripts
+        window.dispatchEvent(new StorageEvent('storage', {
+            key: 'language',
+            newValue: newLang,
+            oldValue: currentLang
+        }));
+    }
+    
+    // Apply initial language if English
+    if (currentLang === 'en') {
+        setTimeout(() => translatePage('en'), 100);
+    }
+    
+    console.log('✅ Mobile JS initialized successfully!');
+}
+
+document.addEventListener('DOMContentLoaded', initializeMobileJS);
+
+// Backup initialization
+setTimeout(initializeMobileJS, 500);
     
     // Simple translation function
     function translatePage(lang) {

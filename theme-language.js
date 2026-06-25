@@ -461,7 +461,19 @@ document.head.appendChild(notificationStyles);
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    window.themeLanguageManager = new ThemeLanguageManager();
+    // Wait a bit for all scripts to load
+    setTimeout(() => {
+        window.themeLanguageManager = new ThemeLanguageManager();
+        console.log('✅ Theme & Language Manager initialized');
+    }, 100);
+});
+
+// Also initialize on window load as backup
+window.addEventListener('load', () => {
+    if (!window.themeLanguageManager) {
+        window.themeLanguageManager = new ThemeLanguageManager();
+        console.log('✅ Theme & Language Manager initialized (backup)');
+    }
 });
 
 // Export for use in other files
