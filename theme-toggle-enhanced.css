@@ -1,0 +1,309 @@
+/* ===================================
+   PROFESSIONAL THEME & LANGUAGE CONTROLS
+   Inspired by: Stripe, Vercel, Linear
+   =================================== */
+
+/* Navigation Controls Container */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 100;
+}
+
+/* =====================================
+   LANGUAGE SWITCHER - PROFESSIONAL PILL DESIGN
+   ===================================== */
+
+.language-switcher {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 4px;
+    gap: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+}
+
+.language-switcher:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Active Background Slider */
+.language-switcher::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.language-switcher.english::before {
+    transform: translateX(calc(100% + 4px));
+}
+
+/* Language Buttons */
+.lang-btn {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+    min-width: 70px;
+}
+
+.lang-btn:hover {
+    color: #333;
+}
+
+.lang-btn.active {
+    color: #000;
+}
+
+.flag {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.lang-text {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+}
+
+/* =====================================
+   THEME SWITCHER - PROFESSIONAL TOGGLE
+   ===================================== */
+
+.theme-switcher {
+    position: relative;
+}
+
+.theme-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.theme-btn:hover {
+    background: white;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px);
+}
+
+.theme-btn:active {
+    transform: translateY(0);
+}
+
+/* Light Mode (Active Dark Mode Button) */
+.theme-btn.light-mode {
+    background: white;
+    color: #FFA500;
+}
+
+#themeIcon {
+    transition: transform 0.3s ease;
+}
+
+.theme-btn:hover #themeIcon {
+    transform: scale(1.1);
+}
+
+/* =====================================
+   DARK MODE STYLES
+   ===================================== */
+
+[data-theme="dark"] .language-switcher {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .language-switcher::before {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .lang-btn {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="dark"] .lang-btn:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .lang-btn.active {
+    color: white;
+}
+
+[data-theme="dark"] .theme-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="dark"] .theme-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+[data-theme="dark"] .theme-btn.light-mode {
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFD700;
+}
+
+/* =====================================
+   MOBILE RESPONSIVE
+   ===================================== */
+
+@media screen and (max-width: 768px) {
+    .nav-controls {
+        gap: 8px;
+    }
+    
+    .language-switcher {
+        padding: 3px;
+    }
+    
+    .lang-btn {
+        padding: 7px 12px;
+        font-size: 13px;
+        min-width: 60px;
+    }
+    
+    .flag {
+        font-size: 14px;
+    }
+    
+    .lang-text {
+        font-size: 12px;
+    }
+    
+    .theme-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-controls {
+        gap: 6px;
+    }
+    
+    .language-switcher {
+        padding: 3px;
+    }
+    
+    .lang-btn {
+        padding: 6px 10px;
+        font-size: 12px;
+        min-width: 55px;
+        gap: 4px;
+    }
+    
+    .flag {
+        font-size: 13px;
+    }
+    
+    .lang-text {
+        font-size: 11px;
+    }
+    
+    .theme-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
+    }
+}
+
+/* =====================================
+   ACCESSIBILITY
+   ===================================== */
+
+.lang-btn:focus-visible,
+.theme-btn:focus-visible {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .language-switcher::before,
+    .lang-btn,
+    .theme-btn,
+    #themeIcon {
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .language-switcher,
+    .theme-btn {
+        border-width: 2px;
+    }
+}
+
+/* =====================================
+   CLEAN & MINIMAL STYLE
+   ===================================== */
+
+/* Remove any previous heavy styles */
+.language-switcher,
+.theme-btn {
+    animation: none !important;
+}
+
+.language-switcher::after,
+.lang-btn::after,
+.theme-btn::after,
+.theme-btn::before {
+    display: none !important;
+}
+
+/* Clean hover states */
+.lang-btn,
+.theme-btn {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+/* Smooth professional transitions */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
